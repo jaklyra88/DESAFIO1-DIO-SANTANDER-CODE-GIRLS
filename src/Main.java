@@ -1,6 +1,4 @@
-import br.com.jaklyra.dominio.Conteudo;
-import br.com.jaklyra.dominio.Curso;
-import br.com.jaklyra.dominio.Mentoria;
+import br.com.jaklyra.dominio.*;
 
 import java.time.LocalDate;
 
@@ -37,9 +35,50 @@ public class Main {
         mentoria.setDescricao("Descrição mentoria JAVA");
         mentoria.setData(LocalDate.now());
 
-        System.out.println(curso);
-        System.out.println(curso1);
-        System.out.println(mentoria);
+        //System.out.println(curso);
+        //System.out.println(curso1);
+        //System.out.println(mentoria);
+
+        //CRIANDO UM BOOTCAMP
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp JAVA Developer");
+        bootcamp.setDescricao("Descrição Bootcamp JAVA Developer");
+        bootcamp.getConteudos().add(curso);
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(mentoria);
+
+        //CRIANDO DEVS
+        Dev devJakelyne = new Dev();
+        devJakelyne.setNome("Jakelyne");
+
+        //MATRICULANDO NO BOOTCAMP
+        devJakelyne.inscreverBootcamp(bootcamp);
+        //VERIFICANSO OS BOOTCAMPS MATRICULADOS
+        System.out.println("Conteúdos inscritos Jakelyne " + devJakelyne.getConteudosInscritos());
+
+        //PROGREDINDO NO BOOTCAMP
+        devJakelyne.progredir();
+        devJakelyne.progredir();
+
+        System.out.println("-");
+
+        //VERIFICANDO OS CONTEUDOS CONCLUIDOS
+        System.out.println("Conteúdos Concluídos Jakelyne " + devJakelyne.getConteudosConcluidos());
+        System.out.println("Conteúdos Inscritos Jakelyne " + devJakelyne.getConteudosInscritos());
+        System.out.println("XP " + devJakelyne.calcularTotalXp());
+
+        System.out.println("---------------");
+
+        Dev devCamila = new Dev();
+        devCamila.setNome("Camila");
+        devCamila.inscreverBootcamp(bootcamp);
+        System.out.println("conteudos Inscritos Camila " + devCamila.getConteudosInscritos());
+        devCamila.progredir();
+        System.out.println("-");
+
+        System.out.println("Conteúdos Concluídos Camila " + devCamila.getConteudosConcluidos());
+        System.out.println("Conteudos Inscritos Camila" + devCamila.getConteudosInscritos());
+        System.out.println("XP " + devCamila.calcularTotalXp());
 
 
     }
