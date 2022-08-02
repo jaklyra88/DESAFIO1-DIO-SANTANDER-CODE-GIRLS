@@ -2,31 +2,24 @@ package br.com.jaklyra.dominio;
 
 import java.time.LocalDate;
 
-public class Mentoria {
+//A CLASSE MENTORIA EXTENDE DA CLASSE CONTEUDO - MENTORIA É FILHA DE CONTEÚDO
+//TUDO QUE EU TENHO EM CONTEUDO EU TENHO EM MENTORIA
+//PORÉM NEM TUDO QUE TENHO EM MENTORIA TEREMOS EM CONTEUDO
+public class Mentoria extends Conteudo{
 
     //ENCAPSULANDO OS ATRIBUTOS
     //PARA TER ACESSO AOS ATRIBUTOS UTILIAMOS OS METODOS SETTER AND GETTER
-    private String titulo;
-    private String descricao;
     private LocalDate data;
 
     public Mentoria() {
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    //MÉTODO CALCULAR XP
+    @Override
+    public double calcularXp() {
+        //QUANDO FOR CRIADO UM MÉTODO MENTORIA E CHAMAR O MÉTODO CALCULARXP
+        //O XP REFERENTE A MENTORIA, SERÁ O XP PADRÃO + 20
+        return XP_PADRAO + 20d;
     }
 
     public LocalDate getData() {
@@ -40,10 +33,12 @@ public class Mentoria {
     @Override
     public String toString() {
         return "Mentoria{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
+                "titulo='" + getTitulo() + '\'' + //CHAMANDO O ATRIBUTO TITULO DA CLASSE CONTEUDO
+                ", descricao='" + getDescricao() + '\'' +//CHAMANDO O ATRIBUTO DESCCRICAO DA CLASSE DESCRIÇÃO
                 ", data=" + data +
                 '}';
     }
+
+
 }
 

@@ -1,3 +1,4 @@
+import br.com.jaklyra.dominio.Conteudo;
 import br.com.jaklyra.dominio.Curso;
 import br.com.jaklyra.dominio.Mentoria;
 
@@ -21,6 +22,13 @@ public class Main {
         curso.setTitulo("Curso JS");
         curso.setDescricao("Descrição Curso JS");
         curso.setCargaHoraria(4);
+
+
+        //POLIMORFISMO
+        //CRIAR UM CURSO A PARTIR DA CLASSE CONTEÚDO
+        //INTANCIANDO UMA CLASSE CURSO A PARTIR DA CLASSE CONTEÚDO
+        Conteudo conteudo = new Curso();
+        Conteudo conteudo1 = new Mentoria();
 
         //INTÂNCIANDO A CLASSE MENTORIA
         Mentoria mentoria = new Mentoria();
