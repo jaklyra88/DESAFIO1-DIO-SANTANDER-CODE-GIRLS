@@ -39,7 +39,7 @@ public class Dev {
         Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();//PEGANDO O PRIMEIRO CONTEUDO
 
             //SE O CONTEUDO EXISTIR EM CONTEUDO
-            if(conteudo.ifPresent()){
+            if(conteudo.isPresent()){
                 //COLOCA O CONTEÚDO DENTRO DO SET DE CONTEUDOS CONCLUIDOS
                 this.conteudosConcluidos.add(conteudo.get());
                 //REMOVENDO DO SET DE CONTEUDOSINSCRITOS
